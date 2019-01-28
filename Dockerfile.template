@@ -1,5 +1,7 @@
 FROM php:7.2-%%VARIANT%%
 
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 # install the PHP extensions we need
 RUN set -ex; \
     docker-php-ext-install opcache pdo_mysql mysqli
